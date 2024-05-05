@@ -1,10 +1,16 @@
 import { useState } from "react";
 import { assets } from "../../assets/assets";
+import { RootState, useAppDispatch } from "../../app/store";
+import { newChat } from "../../app/slices/chstSlice";
+import { useSelector } from "react-redux";
 const Sidepar = () => {
   const [open, setOpen] = useState(true);
+  const dispatch = useAppDispatch()
+  const inputValue = useSelector((state: RootState) => state.chat.inputValue)
+
   return (
-    <div className="hidden sm:block">
-      <div className=" flex  flex-col justify-between bg-[#f0f4f9] min-h-screen py-[11px] px-7 duration-75  ">
+    <div className="hidden sm:block min-h-screen">
+      <div className=" flex  flex-col justify-between h-full bg-[#f0f4f9]  py-[11px] px-7 duration-75 ">
         <div>
           <img
             className="width-img block ml-3 cursor-pointer"
@@ -14,6 +20,7 @@ const Sidepar = () => {
           <div
             className="mt-10px inline-flex items-center gap-3 py-[10px] px-4 
          bg-[#e6eaf1] text-[14px] color-gray cursor-pointer red rounded-[50px] mt-5"
+         onClick={ () => dispatch(newChat()) }
           >
             <img className="width-img  " src={assets.plus_icon} />
             {open && <p className="font-semibold opacity-[0.7]">New Chat</p>}
@@ -26,7 +33,7 @@ const Sidepar = () => {
           text-[14px] color-gray cursor-pointer red rounded-[50px] 	"
               >
                 <img className="width-img" src={assets.message_icon} />
-                <p>What is React ...</p>
+                <p>{inputValue ? inputValue : "Recent"}</p>
               </div>
             </div>
           )}

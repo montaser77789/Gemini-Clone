@@ -7,8 +7,8 @@ const Input = forwardRef(({ ...rest }: IProps, ref: Ref<HTMLInputElement>) => {
     <input
       ref={ref}
       className="rounded-2xl
-         border-gray-300 shadow-lg  focus:outline-none    px-3 py-3
-          text-md w-full bg-[#f0f4f9]"
+         border-gray-300 shadow-lg  focus:outline-none  bg-[#f0f4f9]   px-3 py-3
+          text-md w-full"
       {...rest}
     />
   );
