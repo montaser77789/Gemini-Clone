@@ -42,7 +42,7 @@ const Main = () => {
                 </p>
               </div>
 
-              <div className="grid   gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 ">
+              <div className="grid   gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 mx-auto ">
                 <div
                   className="bg-[#f0f4f9] h-[170px] p-3 rounded-xl flex flex-col justify-between cursor-pointer
    hover:bg-[#e6eaf1]"
@@ -133,7 +133,7 @@ const Main = () => {
         </div>
 
         <div >
-          <div className="   flex justify-between  items-center bg-[#f0f4f9]   rounded-2xl pr-3">
+          <div className=" mt-3   flex justify-between  items-center bg-[#f0f4f9]   rounded-2xl pr-3">
             <Input
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}

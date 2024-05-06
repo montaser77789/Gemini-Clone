@@ -3,7 +3,7 @@ import Sidepar from "./Components/Sidepar/Sidepar";
 
 const App = () => {
   return (
-    <div className="flex space-x-5">
+    <div className="flex">
       <Sidepar />
       <Main />
     </div>
