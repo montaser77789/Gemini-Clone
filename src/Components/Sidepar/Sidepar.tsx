@@ -5,8 +5,8 @@ import { newChat } from "../../app/slices/chstSlice";
 import { useSelector } from "react-redux";
 const Sidepar = () => {
   const [open, setOpen] = useState(true);
-  const dispatch = useAppDispatch()
-  const inputValue = useSelector((state: RootState) => state.chat.inputValue)
+  const dispatch = useAppDispatch();
+  const inputValue = useSelector((state: RootState) => state.chat.inputValue);
 
   return (
     <div className="hidden sm:block min-h-screen">
@@ -20,7 +20,7 @@ const Sidepar = () => {
           <div
             className="mt-10px inline-flex items-center gap-3 py-[10px] px-4 
          bg-[#e6eaf1] text-[14px] color-gray cursor-pointer red rounded-[50px] mt-5"
-         onClick={ () => dispatch(newChat()) }
+            onClick={() => dispatch(newChat())}
           >
             <img className="width-img  " src={assets.plus_icon} />
             {open && <p className="font-semibold opacity-[0.7]">New Chat</p>}
